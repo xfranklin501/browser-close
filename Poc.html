@@ -75,6 +75,22 @@ window.addEventListener('beforeunload', function (e) {
   //return true;
 });
 
+window.addEventListener('pagehide', function (e) {
+  // Cancel the event
+  e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+  // Chrome requires returnValue to be set
+  e.returnValue = '';
+  $("#myModal").modal();
+  //return true;
+});
+
+/* if ('onpagehide' in window) {
+//if(window.onpagehide || window.onpagehide === null){
+   window.addEventListener('pagehide', exitFunction, false);
+} else {
+   window.addEventListener('unload', exitFunction, false);
+} */
+
 </script>
 </body>
 </html>
