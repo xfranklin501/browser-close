@@ -49,6 +49,8 @@ $(document).ready(function(){
 
 <input type="text" id="myText"/>
 <script language="javascript" type="text/javascript">
+
+var let_name = 'frank';
 //window.onbeforeunload = function(event) {
 //  console.log("Window is Closing");
   //event.returnValue = "Write something clever here..";
@@ -72,7 +74,6 @@ window.addEventListener('beforeunload', function (e) {
   // Chrome requires returnValue to be set
   e.returnValue = '';
   $("#myModal").modal();
-  let let_name = 'frank';
   window.window_name = 'mani';
   //return true;
 });
