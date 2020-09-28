@@ -39,13 +39,17 @@
 </div>
 
 <script>
+  var isDisCardAlertEnabled= false;
 $(document).ready(function(){
   $("#myBtn").click(function(){
     $("#myModal").modal();
   });
   $("#postMessage").click(function(){
     alert("message posted");
-    window.webkit.messageHandlers.buttonClicked.postMessage({isDisCardAlertEnabled:true});
+    isDisCardAlertEnabled = true;
+    if(window.webkit){
+      window.webkit.messageHandlers.buttonClicked.postMessage({isDisCardAlertEnabled:true});
+    }
   });
 });
 </script>
