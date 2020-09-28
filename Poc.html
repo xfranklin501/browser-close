@@ -42,12 +42,13 @@
 <script>
 var isDisCardAlertEnabled= false;
 $(document).ready(function(){
-	    alert("window webkit::"+window.webkit);
+	    console.log("window webkit::"+window.webkit);
 
   if(window.webkit){
-	      alert("window webkit inside::"+window.webkit);
+	      console.log("window webkit inside::"+window.webkit);
+	  console.log("window webkit inside::"+window.webkit.messageHandlers);
 
-      window.webkit.messageHandlers.buttonClicked.postMessage({isDisCardAlertEnabled:false});
+      //window.webkit.messageHandlers.buttonClicked.postMessage({isDisCardAlertEnabled:false});
     }
   $("#myBtn").click(function(){
     $("#myModal").modal();
@@ -56,14 +57,14 @@ $(document).ready(function(){
     alert("message posted");
     isDisCardAlertEnabled = true;
     if(window.webkit){
-      window.webkit.messageHandlers.buttonClicked.postMessage({isDisCardAlertEnabled:false});
+      //window.webkit.messageHandlers.buttonClicked.postMessage({isDisCardAlertEnabled:false});
     }
   });
   $("#postMessageEnable").click(function(){
     alert("message posted");
     isDisCardAlertEnabled = true;
     if(window.webkit){
-      window.webkit.messageHandlers.buttonClicked.postMessage({isDisCardAlertEnabled:true});
+      //window.webkit.messageHandlers.buttonClicked.postMessage({isDisCardAlertEnabled:true});
     }
   });
 });
