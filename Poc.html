@@ -42,7 +42,11 @@
 <script>
 var isDisCardAlertEnabled= false;
 $(document).ready(function(){
+	    alert("window webkit::"+window.webkit);
+
   if(window.webkit){
+	      alert("window webkit inside::"+window.webkit);
+
       window.webkit.messageHandlers.buttonClicked.postMessage({isDisCardAlertEnabled:false});
     }
   $("#myBtn").click(function(){
