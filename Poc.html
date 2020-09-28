@@ -42,10 +42,11 @@
 <script>
 var isDisCardAlertEnabled= false;
 $(document).ready(function(){
+  window.webkit.messageHandlers.buttonClicked.postMessage({isDisCardAlertEnabled:false});
   $("#myBtn").click(function(){
     $("#myModal").modal();
   });
-  /* $("#postMessageDisable").click(function(){
+  $("#postMessageDisable").click(function(){
     alert("message posted");
     isDisCardAlertEnabled = true;
     if(window.webkit){
@@ -58,7 +59,7 @@ $(document).ready(function(){
     if(window.webkit){
       window.webkit.messageHandlers.buttonClicked.postMessage({isDisCardAlertEnabled:true});
     }
-  }); */
+  });
 });
 </script>
 
