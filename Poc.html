@@ -14,7 +14,8 @@
   <h2>Activate Modal with JavaScript</h2>
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-info btn-lg" id="myBtn">Open Modal</button>
-  <button type="button" class="btn btn-info btn-lg" id="postMessage">Post Message</button>
+  <button type="button" class="btn btn-info btn-lg" id="postMessageEnable">Enable Discard</button>
+  <button type="button" class="btn btn-info btn-lg" id="postMessageDisable">Disable Discard</button>
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -44,7 +45,14 @@ $(document).ready(function(){
   $("#myBtn").click(function(){
     $("#myModal").modal();
   });
-  $("#postMessage").click(function(){
+  $("#postMessageDisable").click(function(){
+    alert("message posted");
+    isDisCardAlertEnabled = true;
+    if(window.webkit){
+      window.webkit.messageHandlers.buttonClicked.postMessage({isDisCardAlertEnabled:false});
+    }
+  });
+  $("#postMessageEnable").click(function(){
     alert("message posted");
     isDisCardAlertEnabled = true;
     if(window.webkit){
