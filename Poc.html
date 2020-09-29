@@ -47,7 +47,7 @@ $("#myBtn").click(function(){
   });
   $("#postMessageDisable").click(function(){
     console.log("message posted");
-    isDisCardAlertEnabled = true;
+    isDisCardAlertEnabled = false;
     if(window.webkit){
       window.webkit.messageHandlers.buttonClicked.postMessage({isDisCardAlertEnabled:false});
     }
