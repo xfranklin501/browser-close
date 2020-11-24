@@ -48,16 +48,20 @@ $("#myBtn").click(function(){
   $("#postMessageDisable").click(function(){
     console.log("message posted");
     isDisCardAlertEnabled = false;
-    if(window.webkit){
-      window.webkit.messageHandlers.buttonClicked.postMessage({isDisCardAlertEnabled:false});
-    }
+    if (window.webkit) {
+            if (window.webkit.messageHandlers.buttonClicked) {
+                window.webkit.messageHandlers.buttonClicked.postMessage({ isDisCardAlertEnabled: true });
+            }
+     }
   });
   $("#postMessageEnable").click(function(){
     console.log("message posted");
     isDisCardAlertEnabled = true;
-    if(window.webkit){
-      window.webkit.messageHandlers.buttonClicked.postMessage({isDisCardAlertEnabled:true});
-    }
+    if (window.webkit) {
+            if (window.webkit.messageHandlers.buttonClicked) {
+                window.webkit.messageHandlers.buttonClicked.postMessage({ isDisCardAlertEnabled: true });
+            }
+        }
   });
 });
 
