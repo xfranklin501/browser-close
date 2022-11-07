@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <title>ExploreWKWebViewJavascript</title>
+      <script type="text/javascript">
+          function searchCode(faultCode) {
+              //alert(faultCode.text);
+              var message = faultCode.text;
+              window.parent.postMessage(message,'*');
+          }
+
+          function receiveMessage(data) {
+              //alert(faultCode.text);
+              console.log(data);
+              document.getElementById("inputFieldFromNative").value = data;
+
+          }
+      </script>
+  </head>
+  <body>
+    <div>
+      <h2>This is a WebView</h2><br>
+      <h2>Some Sample Fault Codes:</h2><br><br>
+        <div>
+          <label>Fault Code:</label>
+          <a href="" onclick="searchCode(this)">112233</a><br><br>
+        </div>
+        <div>
+          <label>Fault Code:</label>
+          <a href="" onclick="searchCode(this)">111111</a><br><br>
+        </div>
+        <div>
+          <label>Fault Code:</label>
+          <a href="" onclick="searchCode(this)">222222</a><br><br>
+        </div>
+        <div>
+          <label>Fault Code:</label>
+          <a href="" onclick="searchCode(this)">333333</a><br><br>
+        </div>
+        <div>
+          <label>Fault Code:</label>
+          <a href="" onclick="searchCode(this)">444444</a><br><br><br><br>
+        </div>
+        <div align="center">
+            <label>Populated From Native Layer</label>
+            <input id="inputFieldFromNative" style="height:50px;width:300px;font-size:22pt;" type="text" value="">
+        </div>
+    </div>
+  </body>
+</html>
+
