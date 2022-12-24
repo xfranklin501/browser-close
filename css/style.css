@@ -505,7 +505,7 @@
     height:     100%;
     width:      100%;
     background: rgba( 255, 255, 255, .8 ) 
-                url('http://i.stack.imgur.com/FhHRx.gif') 
+                url('../img/spinner.gif') 
                 50% 50% 
                 no-repeat;
 }
@@ -532,34 +532,29 @@ body.loading .modal {
 }
 
 fieldset {
-    overflow: hidden;
-    background-color: #F2F5FC;
+    border: none;
   }
   
-  .some-class {
-    float: left;
-    clear: none;
-  }
-  
-  .text-header{
-    color : grey
-  }
+.text-header{
+    font-family: "SegmaMedium";
+    font-size: 14px;
+ }
   
   input[type=radio],
   input.radio {
     float: left;
     clear: none;
-    margin : 5px 20px 5px 20px;
+    margin :5px 40px 5px 0px;
 }
 
 input[type='radio'] {
     -webkit-appearance:none;
-    width:20px;
-    height:20px;
-    border:1px solid e0dcee;
+    width:14px;
+    height:14px;
+    border: 1px solid #dfdcdc;
     border-radius:50%;
     outline:none;
-    background-color: #e0dcee;
+    background-color: #a79eca;
 }
 
 input[type='radio']:before {
@@ -577,36 +572,83 @@ input[type='radio']:checked:before {
 .line-container {
     display: flex;
     width: 95%;
-    margin: 20px 10px 20px;
+    margin: 20px 10px 20px 0;
     align-items: center;
   }
 
 .line {
     flex-grow: 1;
     height: 2px;
-    background: #D6D3E6;
+    background: #a79eca;
     position: relative;
   }
   
   .line.arrow-right:after {
     position: absolute;
     content: '';
-    bottom: -10px;
+    bottom: -5px;
     right: -2px;
     width: 0;
     height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid #D6D3E6;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 10px solid #a79eca;
   }
 
   .radio-container{
     position: absolute;
   }
   .evaluation{
-    width: 270;
+    background-color: #becdf0;
+    height: 170px;
+    padding: 20px;
+    position: relative;
+    padding-top:50px;
   }
-
+  .header-container{
+    position: absolute;
+    width: 100%;
+    top: 5px;
+    left: -12px;
+  }
+.evaluation-header{
+    background-color: #786aad;
+    font-family: "SegmaRegular";
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    height: 34px;
+    font-size: 14px;
+    left: 12px;
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+}
+.prev::before{
+    content: " ";
+    border-left: 12px solid #786aad;
+    border-bottom: 12px solid #786aad;
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    display: block;
+}
+.numbers{
+    list-style: none;
+    clear: both;
+    padding-left: 2px;
+    margin-top: -4px;
+}
+.numbers li{
+    float: left;
+    margin-right: 45px;
+    font-family: "SegmaBold";
+}
+.scars{
+    clear: both;
+    padding-top: 16px;
+}
 @media (min-width: 576px){
 	.wrapper{
         max-width: 540px;
@@ -656,6 +698,7 @@ input[type='radio']:checked:before {
     .fas-content{
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
+        align-items: center;
     }
     .fas-notes-container{
         grid-gap: 40px;
