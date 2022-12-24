@@ -270,8 +270,8 @@
                     </div>
                     <div class="evaluation">
                         <div class="header-container">
-                        <div class="prev"></div>
-                        <div class="evaluation-header">Additional Skin Quality Evaluation</div>
+                            <div class="prev"></div>
+                            <div class="evaluation-header">Additional Skin Quality Evaluation</div>
                         </div>
                         <fieldset>
                             <div class="dehydration">
@@ -293,23 +293,23 @@
                                 </ul>
                             </div>
                             <div class="scars">
-                            <span class="text-header">Scars</span>
-                            <div class="some-class line-container">
-                                <span class="line arrow-right"></span>
-                                <div class="radio-container">
-                                    <input type="radio" class="radio" name="y" />
-                                    <input type="radio" class="radio" name="y" />
-                                    <input type="radio" class="radio" name="y" />
-                                    <input type="radio" class="radio" name="y" />
+                                <span class="text-header">Scars</span>
+                                <div class="some-class line-container">
+                                    <span class="line arrow-right"></span>
+                                    <div class="radio-container">
+                                        <input type="radio" class="radio" name="y" />
+                                        <input type="radio" class="radio" name="y" />
+                                        <input type="radio" class="radio" name="y" />
+                                        <input type="radio" class="radio" name="y" />
+                                    </div>
                                 </div>
+                                <ul class="numbers">
+                                    <li>0</li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                </ul>
                             </div>
-                            <ul class="numbers">
-                                <li>0</li>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                            </ul>
-                        </div>
                         </fieldset>
                     </div>
                 </div>
@@ -396,35 +396,58 @@
                             <p>TREATMENT</p>
                             <p>COST GUIDE</p>
                         </div>
-                        <div class="grid-plan">
-                            <textarea type="text" class="textarea"></textarea>
-                            <textarea type="text" class="textarea"></textarea>
-                            <textarea type="text" class="textarea"></textarea>
-                            <textarea type="text" class="textarea"></textarea>
-                        </div>
-                        <div class="grid-plan">
-                            <textarea type="text" class="textarea"></textarea>
-                            <textarea type="text" class="textarea"></textarea>
-                            <textarea type="text" class="textarea"></textarea>
-                            <textarea type="text" class="textarea"></textarea>
-                        </div>
-                        <div class="grid-plan">
-                            <textarea type="text" class="textarea"></textarea>
-                            <textarea type="text" class="textarea"></textarea>
-                            <textarea type="text" class="textarea"></textarea>
-                            <textarea type="text" class="textarea"></textarea>
-                        </div>
-                        <div class="grid-plan">
-                            <textarea type="text" class="textarea"></textarea>
-                            <textarea type="text" class="textarea"></textarea>
-                            <textarea type="text" class="textarea"></textarea>
-                            <textarea type="text" class="textarea"></textarea>
-                        </div>
-                        <div class="grid-plan">
-                            <textarea type="text" class="textarea"></textarea>
-                            <textarea type="text" class="textarea"></textarea>
-                            <textarea type="text" class="textarea"></textarea>
-                            <textarea type="text" class="textarea"></textarea>
+                        <div class="treatment-plan">
+                            <div class="grid-plan">
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                            </div>
+                            <div class="grid-plan">
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                            </div>
+                            <div class="grid-plan">
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                            </div>
+                            <div class="grid-plan">
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                            </div>
+                            <div class="grid-plan">
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+                                <textarea type="text" class="textarea"></textarea>
+                                <span></span>
+
+                            </div>
                         </div>
                         <div class="notes patient-notes">
                             <p class="sB">Notes</p>
@@ -506,14 +529,15 @@
             $('.ignore').hide();
             $('.patient-notes span').addClass('displayBlock');
             $('.patient-notes textarea').hide();
-            $('.facial-notes textarea').hide();
-            $('.facial-notes textarea').next('span').show();
+            $('.facial-notes textarea,.treatment-plan textarea').hide();
+            $('.facial-notes textarea,.treatment-plan textarea').next('span').show();
             $('.patient-notes span').text($('.patient-notes textarea').val());
-            $(".facial-notes textarea").each(function (index) {
+            $(".facial-notes textarea,.treatment-plan textarea").each(function (index) {
                 const $row = $(this);
                 let vl1 = $row.val()
                 $row.next('span').text(vl1);
             });
+
             const data = document.getElementById('contentToPrint');
             $("body").addClass("loading");
             html2canvas(data).then((canvas) => {
@@ -533,11 +557,11 @@
                 }
                 doc.save('Galderma Facial Assessment Scale – Treatment Plan');
                 $("body").removeClass("loading");
-                $('.facial-notes textarea').show();
+                $('.facial-notes textarea,.treatment-plan textarea').show();
                 $('.patient-notes textarea').show();
                 $('.patient-notes span').removeClass('displayBlock');
-                $('.facial-notes textarea').next('span').hide();
-                $('.facial-notes textarea').next('span').text('');
+                $('.facial-notes textarea,.treatment-plan textarea').next('span').hide();
+                $('.facial-notes textarea,.treatment-plan textarea').next('span').text('');
                 $('.ignore').show();
 
             });

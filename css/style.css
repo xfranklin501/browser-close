@@ -518,7 +518,7 @@ body.loading .modal {
     display: block;
 }
 
-.facial-notes span, .patient-notes span{
+.facial-notes span, .patient-notes span, .treatment-plan span{
     display: none;
     border: 1px solid #fff;
     background-color: white;
@@ -526,6 +526,11 @@ body.loading .modal {
     min-height: 54px;
 }
 
+.treatment-plan span{
+    margin: 6px 0;
+    min-height: 20px;
+
+}
 .patient-notes .displayBlock{
    width: 100%;
    display: block;
