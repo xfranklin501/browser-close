@@ -26,6 +26,7 @@
 	font-family: "SegmaLightItalic";
 	src: url("../fonts/Segma-LightItalic.otf") format("opentype");
 }
+
 *{
     margin:0;
     padding: 0;
@@ -218,6 +219,14 @@
     font-size: 10px;
     text-align: center;
     font-family: "SegmaRegular";
+}
+.faces-container{
+    background: transparent;
+    z-index: 1;
+    position: relative;
+}
+.faces-container img{
+    height: 85px;
 }
 /**********modal************/
 .popup_main{
