@@ -26,6 +26,10 @@
 	font-family: "SegmaLightItalic";
 	src: url("../fonts/Segma-LightItalic.otf") format("opentype");
 }
+@font-face {
+	font-family: "Georgia";
+	src: url("../fonts/Georgia.ttf") format("truetype");
+}
 
 *{
     margin:0;
@@ -384,6 +388,7 @@
     margin-top: 12px;
     height: 54px;
     padding: 4px;
+    font-family: "Georgia";
 }
 /*************treatment plan***************/
 .treatment-plan{
@@ -662,9 +667,6 @@ input[type='radio']:checked:before {
 .fas-tool{
     text-align: center;
     margin: 25px 0;
-}
-.fas-tool canvas{
-    width: 90%;
 }
 .fas-tool-text{
     font-family: "SegmaRegular";
